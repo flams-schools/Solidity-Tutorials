@@ -1,0 +1,43 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compactible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/static/image/fav.PNG">
+        <title>{% block title %} {% endblock %}</title>
+    </head>
+
+    <body>
+        <section id="cover">
+            <a href="/"><img id="logo" src="/static/images/CODIES_ALERT.png" ></a>
+
+            <ul>
+                <li><a class="{% if active=='home' %}" href="/">Home</a></li>
+                <li><a class="{% if active=='home' %}" href="{{ url_for('deposit') }}">Deposit</a></li>
+
+                <!-- For some reason only Transaction with capital T works -->
+
+                <li><a class="{% if active=='home' %}" href="{{ url_for('FundMe') }}">FundMe</a></li>
+
+                <!-- <li><a class="{% if active=='home' %}" href="#">Borrow</a></li> -->
+            </ul>
+
+
+            <!-- <div class="search-container">
+                <form action="/search">
+                    <input type="text" placeholder="Search for Transaction id or address" name="search" required />
+                    <button type="submit"><img src="/static/images/search.png" /></button>
+                </form>
+            </div> -->
+
+            {% block content %} {% endblock %}
+        </section>
+    </body>
+</html>
